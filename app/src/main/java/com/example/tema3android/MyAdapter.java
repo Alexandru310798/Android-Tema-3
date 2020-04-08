@@ -1,6 +1,5 @@
 package com.example.tema3android;
 
-import android.app.Fragment;
 import android.content.Context;
 
 import android.view.LayoutInflater;
@@ -10,7 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -47,12 +47,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                                                     {
                                                         Toast.makeText(context,"You just clicked "+listItem.getId() + "th item\n",Toast.LENGTH_SHORT).show();
                                                         String new_url = "https://jsonplaceholder.typicode.com/todos?userId=" + listItem.getId();
-                                                        MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new ShowDataFragment(new_url)).addToBackStack(null).commit();
+                                                        android.app.Fragment fragment = new ShowDataFragment(new_url);
+                                                        MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack(null).commit();
                                                     }
 
                                                }
-
-
         );
     }
 

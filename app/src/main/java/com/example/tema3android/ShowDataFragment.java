@@ -1,6 +1,7 @@
 package com.example.tema3android;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -27,17 +28,17 @@ import java.util.List;
 import java.util.Objects;
 
 
+@SuppressLint("ValidFragment")
 public class ShowDataFragment extends android.app.Fragment {
     private RecyclerView recyclerView;
     private String url;
     private RecyclerView.Adapter myAdapter;
     private List<ToDo> todoList;
-    public ShowDataFragment( String url) {
+    @SuppressLint("ValidFragment")
+    public ShowDataFragment(String url) {
         this.url = url;
     }
 
-    public ShowDataFragment() {
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
