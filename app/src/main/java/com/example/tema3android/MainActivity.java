@@ -1,16 +1,16 @@
 package com.example.tema3android;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Activity;
-import android.app.DownloadManager;
-import android.app.LauncherActivity;
+import android.app.FragmentManager;
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.widget.Toast;
 
+
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private String url = "https://jsonplaceholder.typicode.com/users";
-
+    public static FragmentManager fragmentManager;
     private void loadRecyclerViewData()
     {
         final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -71,11 +71,11 @@ public class MainActivity extends Activity {
         requestQueue.add(stringRequest);
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fragmentManager = getFragmentManager();
         recyclerView = (RecyclerView)findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -83,7 +83,12 @@ public class MainActivity extends Activity {
         loadRecyclerViewData();
 
 
+
+
+
     }
 
 
 }
+
+

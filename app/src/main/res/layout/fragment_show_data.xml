@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/fragment_show">
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -12,11 +13,10 @@
         android:layout_height="520dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="74dp">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/my_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_recycler_view_to_show_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </FrameLayout>
-
 </RelativeLayout>
