@@ -43,8 +43,8 @@ public class MainActivity extends Activity {
             public void onResponse(String string) {
                 progressDialog.dismiss();
                 try {
-                    JSONObject jsonObject = new JSONObject(string);
-                    JSONArray jsonArray = jsonObject.getJSONArray("");
+
+                    JSONArray jsonArray = new JSONArray(string);
                     for(int i=0;i<jsonArray.length();i++)
                     {
                         JSONObject object = jsonArray.getJSONObject(i);
